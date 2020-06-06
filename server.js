@@ -10,8 +10,6 @@ initializePassport(
   passport
 );
 
-require('dotenv').config();
-
 const app = express();
 const port = process.env.PORT || 5001;
 
@@ -27,7 +25,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-const uri = process.env.ATLAS_URI;
+const uri = 'mongodb+srv://mohitjain:root@cluster0-sfxvn.gcp.mongodb.net/test?retryWrites=true&w=majority';
 const connection = mongoose.connect(uri, { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true });
 
 connection.then((db) => console.log("MongoDB database connection established successfully"))
@@ -36,11 +34,11 @@ connection.then((db) => console.log("MongoDB database connection established suc
 const todosRouter = require('./routes/todos');
 const usersRouter = require('./routes/users');
 
+app.use(express.static(__dirname + "/build"));
+
 app.use('/todos', todosRouter);
 app.use('/users', usersRouter);
 
-
-app.use(express.static(__dirname + "/build"));
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
 });

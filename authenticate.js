@@ -10,9 +10,6 @@ function initialize(passport) {
             } else if (user === null) {
                 return done(null, false, { message: 'No user with that Email !' });
             }
-            // else if (user.confirmed === false) {
-            //     return done(null, false, { message: 'Verify your Email !' });
-            // } 
             else if (!bcrypt.compareSync(password, user.password)) {
                 return done(null, false, { message: 'Password Incorrect !' });
             } else {
