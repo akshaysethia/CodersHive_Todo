@@ -2,7 +2,7 @@
 
 To run the project follow these steps:
 
-1. Open cmd, bash or anything you have.
-2. type 'npm i' in the prompt, in node folder as well as frontend folder.
-3. now come back to main folder, and write, npm run start.
-4. both react and node will work
+1. Open cmd, bash or termial, anything you have.
+2. Now type 'npm i' in the folder.
+3. http://localhost:5001, hit it on browser.
+4. Volia It Works !
