@@ -41,6 +41,8 @@ const usersRouter = require('./routes/users');
 app.use('/todos', todosRouter);
 app.use('/users', usersRouter);
 
+app.use(express.static('frontend/build'));
+
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
 });
