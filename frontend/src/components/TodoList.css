@@ -1,0 +1,12 @@
+.dark1{
+    font-weight: 700 !important;
+    color: black !important;
+    border: 3px white solid !important;
+    background: aqua !important;
+}
+.light1{
+    font-weight: 700 !important;
+    color: white !important;
+    border: 3px white solid !important;
+    background: #345 !important;
+}
